@@ -117,6 +117,10 @@
   #define X_MAX_PIN                           43  // AUX (2)
   #define Y_STOP_PIN                          19  // Z+
 
+  #ifndef Z_MIN_PROBE_PIN
+    #define Z_MIN_PROBE_PIN                    2  // X+ (BLTouch signal — knutwurst 4MaxPro dedicated probe pin)
+  #endif
+
   #define CONTROLLER_FAN_PIN            FAN1_PIN // PATCH: knutwurst
 #elif ANY(TRIGORILLA_MAPPING_CHIRON, TRIGORILLA_MAPPING_I3MEGA)
   // Chiron uses AUX header for Y and Z endstops
