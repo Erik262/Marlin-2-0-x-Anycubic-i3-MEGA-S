@@ -1267,7 +1267,7 @@
   #define X_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.
   #define Y_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.
   #if BOTH(KNUTWURST_BLTOUCH, KNUTWURST_4MAXP2)
-    #define Z_MIN_ENDSTOP_INVERTING true  // BLTouch+4MAXP2: kept from user's tested config (upstream default is false)
+    #define Z_MIN_ENDSTOP_INVERTING false // BLTouch requires this to be false (enforced by Marlin SanityCheck)
   #else
     #define Z_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.
   #endif
@@ -1623,7 +1623,7 @@
  * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
  */
 #if BOTH(KNUTWURST_BLTOUCH, KNUTWURST_4MAXP2)
-  //#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
+  #define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 #endif
 
 // Force the use of the probe for Z-axis homing
@@ -2717,7 +2717,7 @@
  * - If stepper drivers sleep, XY homing may be required again before Z homing.
  */
 #if BOTH(KNUTWURST_BLTOUCH, KNUTWURST_4MAXP2)
-  //d#define Z_SAFE_HOMING
+  #define Z_SAFE_HOMING
 #endif
 
 
