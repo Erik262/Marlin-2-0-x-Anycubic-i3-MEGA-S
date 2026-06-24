@@ -2717,7 +2717,7 @@
  * - If stepper drivers sleep, XY homing may be required again before Z homing.
  */
 #if BOTH(KNUTWURST_BLTOUCH, KNUTWURST_4MAXP2)
-  #define Z_SAFE_HOMING
+  //#define Z_SAFE_HOMING  // OFF: home Z where the head already is (by the brush), like the original firmware. Z homes on the mechanical endstop, so this is safe.
 #endif
 
 
